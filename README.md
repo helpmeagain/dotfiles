@@ -1,0 +1,1 @@
+Ajustar para não dar conflito no horário dual boot: timedatectl set-local-rtc 1 --adjust-system-clock (talvez seja necessário ajustar o windows mais uma vez)

@@ -11,11 +11,12 @@ DOTFILES=(
     ["rofi"]="$CONFIG_DIR/rofi"
     ["kitty"]="$CONFIG_DIR/kitty"
     ["matugen"]="$CONFIG_DIR/matugen"
+    ["ohmyposh"]="$CONFIG_DIR/ohmyposh"
 )
 
 declare -A HOME_FILES
 HOME_FILES=(
-    [".bashrc"]="$HOME/.bashrc"
+    [".zshrc"]="$HOME/.zshrc"
 )
 
 declare -A SCRIPTS
