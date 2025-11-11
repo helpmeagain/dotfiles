@@ -1,17 +1,18 @@
 @import "colors.css";
 
+/* ----- Base Waybar Settings ----- */
+
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  min-height: 0;
 }
 
 window#waybar {
-    /* background: rgba(43, 48, 59, 0.5); */
-    background: @background;
-    color: @on_surface;
+  background: @background;
+  color: @on_surface;
 }
 
 tooltip {
@@ -22,33 +23,118 @@ tooltip label {
   color: @on_surface;
 }
 
+/* ----- OS Icon ----- */
+
+#custom-archicon {
+  font-size: 1.5rem;
+  padding: 0px 25px;
+  transition: all 0.3s ease;
+}
+
+#custom-archicon:hover {
+  color: @primary;
+  transition: all 0.3s ease;
+}
+
+/* ----- Workspaces ----- */
+
 #workspaces button {
-    padding: 0 5px;
-    background: transparent;
-    color: white;
-    border-bottom: 3px solid transparent;
+  padding: 0 5px;
+  background: transparent;
+  color: white;
+  border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #64727D;
-    border-bottom: 3px solid white;
+  background: #64727d;
+  border-bottom: 3px solid white;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: black;
-}
-
-#battery.charging {
-    color: white;
-    background-color: #26A65B;
-}
+/* ----- Buttons ----- */
 
 #battery,
 #pulseaudio,
+#bluetooth,
 #network {
-    padding: 5px 15px;
-    margin: 2px;
-    background-color: @primary;
-    color: #121212;
+  padding: 5px 20px;
+  margin: 2px;
+  border: 1px solid @outline;
+  transition: all 0.3s ease;
+}
+
+#pulseaudio {
+  min-width: 60px;
+}
+
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover {
+  color: @primary;
+  border: 1px solid @primary;
+  transition: all 0.3s ease;
+}
+
+#clock:hover {
+  color: @primary;
+  transition: all 0.3s ease;
+}
+
+#battery {
+  background-color: #ffffff;
+  color: black;
+}
+
+#battery.charging {
+  color: white;
+  background-color: #26a65b;
+}
+
+#bluetooth.off,
+#bluetooth.disabled,
+#bluetooth.no-controller {
+  color: @outline;
+  transition: all 0.3s ease;
+}
+
+#bluetooth.off:hover,
+#bluetooth.disabled:hover,
+#bluetooth.no-controller:hover {
+  color: @primary;
+  transition: all 0.3s ease;
+}
+
+/* ----- Power Buttons ----- */
+
+#group-power {
+  border: 1px solid @outline;
+  margin: 2px;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+#group-power:hover {
+  border: 1px solid @primary;
+}
+#custom-power,
+#custom-lock,
+#custom-logout,
+#custom-reboot {
+  padding: 5px 20px;
+  border: none;
+  border-right: 2px solid transparent;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+#custom-power:hover,
+#custom-lock:hover,
+#custom-logout:hover,
+#custom-reboot:hover {
+  color: @primary;
+}
+
+#group-power:hover #custom-reboot,
+#group-power:hover #custom-logout,
+#group-power:hover #custom-lock {
+  border-right: 2px solid @outline;
 }
