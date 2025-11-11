@@ -1,0 +1,1 @@
+Mudar wallpaper = matugen image `/path/to/img.png`
