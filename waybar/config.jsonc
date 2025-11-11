@@ -94,8 +94,8 @@
   },
   "custom/lock": {
     "format": "",
-    "tooltip": false
-    // "on-click": "hyprlock"
+    "tooltip": false,
+    "on-click": "hyprlock"
   },
   "custom/reboot": {
     "format": "",
