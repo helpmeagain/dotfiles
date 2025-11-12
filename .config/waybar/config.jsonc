@@ -3,6 +3,7 @@
   "modules-left": ["custom/archicon", "hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
+    "tray",
     "pulseaudio",
     "bluetooth",
     "network",
@@ -12,6 +13,10 @@
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 6
   },
   "clock": {
     "format": " {:%d/%b/%Y %H:%M}",

@@ -55,6 +55,7 @@ tooltip label {
 #battery,
 #pulseaudio,
 #bluetooth,
+#tray,
 #network {
   padding: 5px 20px;
   margin: 2px;
@@ -68,6 +69,7 @@ tooltip label {
 
 #network:hover,
 #bluetooth:hover,
+#tray:hover,
 #pulseaudio:hover {
   color: @primary;
   border: 1px solid @primary;

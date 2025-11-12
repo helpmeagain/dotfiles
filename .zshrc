@@ -104,5 +104,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="$HOME/.local/bin:$PATH"
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin_macchiato.omp.json)"
-
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin_modify.omp.json)"
+source /usr/share/nvm/init-nvm.sh

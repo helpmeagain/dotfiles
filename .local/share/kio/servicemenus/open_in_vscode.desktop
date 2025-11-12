@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=inode/directory;
+Actions=openInVSCode;
+X-KDE-StartupNotify=false
+X-KDE-Priority=TopLevel
+
+[Desktop Action openInVSCode]
+Name=Abrir com VS Code
+Exec=code "%f"
+Icon=visual-studio-code
