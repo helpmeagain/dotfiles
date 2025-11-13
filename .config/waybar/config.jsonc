@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  // "position": "bottom",
   "modules-left": ["custom/archicon", "hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
@@ -14,6 +15,15 @@
     "format": "",
     "tooltip": false,
     "on-click": "pkill rofi || .config/rofi/launchers/type-1/launcher.sh"
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "empty": "•"
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -47,13 +57,6 @@
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
-    }
-  },
-  "hyprland/workspaces": {
-    "format": "{name}",
-    "persistent-workspaces": {
-      "*": 5, // 5 workspaces by default on every monitor
-      "HDMI-A-1": 3 // but only three on HDMI-SA-1
     }
   },
   "pulseaudio": {
@@ -100,7 +103,12 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["custom/power", "custom/logout", "custom/suspend", "custom/reboot"]
+    "modules": [
+      "custom/power",
+      "custom/logout",
+      "custom/suspend",
+      "custom/reboot"
+    ]
     // "modules": ["custom/power", "custom/lock", "custom/logout", "custom/suspend", "custom/reboot"]
   },
   "custom/lock": {
@@ -129,6 +137,5 @@
     "tooltip": false,
     "on-click": "systemctl suspend"
     // "on-click": "~/.config/waybar/scripts/power-confirm.sh suspend"
-
   }
 }

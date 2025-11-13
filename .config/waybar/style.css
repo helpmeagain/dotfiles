@@ -38,16 +38,26 @@ tooltip label {
 
 /* ----- Workspaces ----- */
 
-#workspaces button {
-  padding: 0 5px;
-  background: transparent;
-  color: white;
-  border-bottom: 3px solid transparent;
+#workspace {
+  padding: 5px 20px;
 }
 
-#workspaces button.focused {
-  background: #64727d;
-  border-bottom: 3px solid white;
+#workspaces button {
+  padding: 0 8px;
+  background: transparent;
+  color: white;
+}
+
+#workspaces button:hover {
+  color: @primary;
+}
+
+#workspaces button.active {
+  border: 1px solid @outline;
+}
+
+#workspaces button.empty {
+  color: @outline;
 }
 
 /* ----- Buttons ----- */
@@ -60,6 +70,12 @@ tooltip label {
   padding: 5px 20px;
   margin: 2px;
   border: 1px solid @outline;
+  transition: all 0.3s ease;
+}
+
+#clock {
+  padding: 5px 20px;
+  margin: 2px;
   transition: all 0.3s ease;
 }
 
