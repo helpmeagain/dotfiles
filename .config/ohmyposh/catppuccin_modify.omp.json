@@ -15,27 +15,31 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "os",
           "foreground": "p:os",
-          "style": "plain",
+          "style": "powerline",
           "template": "{{.Icon}} ",
-          "type": "os"
+          "properties": {
+            "linux": ""
+          }
         },
         {
           "foreground": "p:blue",
           "style": "plain",
-          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ .UserName }} ",
           "type": "session"
         },
         {
           "foreground": "p:pink",
-          "properties": {
-            "folder_icon": "...",
-            "home_icon": "~",
-            "style": "agnoster_short"
-          },
           "style": "plain",
           "template": "{{ .Path }} ",
-          "type": "path"
+          "type": "path",
+          "properties": {
+            "max_depth": 3,
+            "home_icon": "~",
+            "folder_icon": "...",
+            "style": "agnoster_short"
+          }
         },
         {
           "foreground": "p:lavender",
