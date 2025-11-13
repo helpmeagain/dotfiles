@@ -10,6 +10,11 @@
     "battery",
     "group/group-power"
   ],
+  "custom/archicon": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "pkill rofi || .config/rofi/launchers/type-1/launcher.sh"
+  },
   "battery": {
     "format": "{capacity}% {icon}",
     "format-icons": ["", "", "", "", ""]
@@ -95,31 +100,35 @@
       "children-class": "not-power",
       "transition-left-to-right": false
     },
-    "modules": ["custom/power", "custom/lock", "custom/logout", "custom/reboot"]
+    "modules": ["custom/power", "custom/logout", "custom/suspend", "custom/reboot"]
+    // "modules": ["custom/power", "custom/lock", "custom/logout", "custom/suspend", "custom/reboot"]
   },
   "custom/lock": {
     "format": "",
     "tooltip": false,
     "on-click": "hyprlock"
+    // "on-click": "~/.config/waybar/scripts/power-confirm.sh lock"
   },
   "custom/reboot": {
     "format": "",
     "tooltip": false,
-    "on-click": "systemctl reboot"
+    "on-click": "~/.config/waybar/scripts/power-confirm.sh reboot"
   },
   "custom/power": {
     "format": "",
     "tooltip": false,
-    "on-click": "systemctl poweroff"
+    "on-click": "~/.config/waybar/scripts/power-confirm.sh poweroff"
   },
   "custom/logout": {
     "format": "",
     "tooltip": false,
-    "on-click": "hyprctl dispatch exit"
+    "on-click": "~/.config/waybar/scripts/power-confirm.sh logout"
   },
-  "custom/archicon": {
-    "format": "",
+  "custom/suspend": {
+    "format": "",
     "tooltip": false,
-    "on-click": "pkill rofi || .config/rofi/launchers/type-1/launcher.sh"
+    "on-click": "systemctl suspend"
+    // "on-click": "~/.config/waybar/scripts/power-confirm.sh suspend"
+
   }
 }

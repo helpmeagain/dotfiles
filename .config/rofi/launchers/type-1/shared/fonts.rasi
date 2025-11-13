@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "SF Pro Display 10";
+    font: "JetBrainsMono Nerd Font 10";
 }
