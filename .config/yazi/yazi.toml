@@ -1,0 +1,18 @@
+[mgr]
+ratio = [2, 4, 3]
+
+[opener]
+edit = [
+	{ run = '${EDITOR:=vi} "$@"', desc = "Visual Studio Code", orphan = true },
+	{ run = 'vim "$@"', desc="Vim", block = true },
+	{ run = 'nano "$@"', desc="Nano", block = true },
+]
+subtitle = [
+	{ run = ''' echo sub-add "'$0'" | socat - /tmp/mpv.sock ''', desc = "Add sub to MPV" },
+]
+
+
+[open]
+prepend_rules = [
+	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = ["subtitle", "edit"] },
+]

@@ -106,3 +106,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin_modify.omp.json)"
 source /usr/share/nvm/init-nvm.sh
+
+export EDITOR="code"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}

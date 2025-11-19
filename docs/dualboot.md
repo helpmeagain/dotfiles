@@ -11,3 +11,6 @@
     - Rodar `sudo nano /etc/default/grub`.
     - Mudar o parâmetro para `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nvidia.NVreg_PreserveVideoMemoryAllocations=1"` (no caso, apenas adicionar a parte da nvidea)
     - sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+- Timezone não encontrada (DBeaver):
+    - Rodar `sudo timedatectl set-timezone America/Sao_Paulo`
