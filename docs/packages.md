@@ -5,19 +5,19 @@ git
 curl
 wget
 docker
+docker-compose
 stow
 zsh
+mise
 
 # Hyperland
 nwg-displays
-rofi
 matugen
 ohmyposh
 waybar
 hypridle
 hyprlock
 hyprshot
-blueman
 
 ## Utils
 yazi 
@@ -38,6 +38,11 @@ fastfetch
 
 ### AUR
 oh-my-posh
+visual-studio-code-bin
 
 ## Desktop
 mpv
+firefox
+bluetui
+rofi
+spotify-launcher

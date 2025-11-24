@@ -67,6 +67,20 @@ tooltip label {
   color: @outline;
 }
 
+/* ----- Taskbar ----- */
+
+#taskbar button {
+  border: 1px solid transparent;
+  margin: 2px 2px;
+  padding: 0 8px;
+}
+
+#taskbar button.active {
+  border: 1px solid @outline;
+  border-radius: 5px;
+  background: transparent;
+}
+
 /* ----- Buttons ----- */
 
 #battery,

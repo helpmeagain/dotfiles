@@ -1,20 +1,26 @@
 {
   "layer": "top",
   // "position": "bottom",
-  "modules-left": ["custom/archicon", "hyprland/workspaces"],
+  "modules-left": ["custom/archicon", "hyprland/workspaces", "niri/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "pulseaudio",
     "bluetooth",
     "network",
-    "battery",
-    "group/group-power"
+    "battery"
+    // "group/group-power"
   ],
   "custom/archicon": {
     "format": "",
     "tooltip": false,
-    "on-click": "pkill rofi || .config/rofi/launchers/type-1/launcher.sh"
+    "on-click": "pkill rofi || .config/rofi/applets/bin/apps.sh" 
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "empty": "•"
+    }
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -24,6 +30,13 @@
     "persistent-workspaces": {
       "*": 5
     }
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "tooltip-format": "{state}: {title}",
+    "on-click": "activate",
+    "on-click-right": "close"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -81,7 +94,7 @@
     "format-off": "",
     "format-on": "",
     "format-connected": " {num_connections} devices",
-    "on-click": "blueman-manager",
+    "on-click": "kitty --title bluetui -e bluetui",
     // "on-click": "bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on",
     "tooltip-format-enumerate-connected": "{device_alias}",
     // "tooltip-format-connected": "{controller_alias} ({controller_address})\n{device_enumerate}"
@@ -89,11 +102,10 @@
   },
   "network": {
     "interval": 60,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "  {ifname}",
-    "format-disconnected": "  Disconnected",
-    "tooltip-format-ethernet": "{ifname}",
-    "tooltip-format-wifi": "{essid}",
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ifname}",
     "on-click": "kitty --title nmtui -e nmtui"
   },
   "group/group-power": {

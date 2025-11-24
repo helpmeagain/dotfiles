@@ -103,9 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias stdck="systemctl start docker"
+
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin_modify.omp.json)"
-source /usr/share/nvm/init-nvm.sh
 
 export EDITOR="code"
 function y() {
@@ -115,3 +116,12 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+eval "$(mise activate zsh)"
+
+# pnpm
+export PNPM_HOME="/home/help/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
