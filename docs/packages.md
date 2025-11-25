@@ -18,6 +18,7 @@ waybar
 hypridle
 hyprlock
 hyprshot
+swww
 
 ## Utils
 yazi 
