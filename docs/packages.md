@@ -40,6 +40,7 @@ fastfetch
 ### AUR
 oh-my-posh
 visual-studio-code-bin
+bibata-cursor-theme-bin
 
 ## Desktop
 mpv
