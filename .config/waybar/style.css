@@ -13,12 +13,19 @@
 window#waybar {
   background: @background;
   color: @on_surface;
+  border: 1px solid @outline_variant;
+  border-radius: 8px;
+}
+
+window#waybar:hover {
+  border: 1px solid @primary;
 }
 
 tooltip {
   background: @background;
   border: 1px solid rgba(100, 114, 125, 0.5);
 }
+
 tooltip label {
   color: @on_surface;
 }
@@ -26,8 +33,9 @@ tooltip label {
 /* ----- OS Icon ----- */
 
 #custom-archicon {
-  font-size: 1.5rem;
-  padding: 0px 25px;
+  font-size: 1.7rem;
+  padding: 0px 15px;
+  margin: 0px 0px;
   transition: all 0.3s ease;
 }
 
@@ -38,15 +46,17 @@ tooltip label {
 
 /* ----- Workspaces ----- */
 
-#workspace {
-  padding: 5px 20px;
+#workspaces {
+  margin: 3px;
 }
 
 #workspaces button {
-  padding: 0 8px;
-  margin: 2px;
+  padding: 3px 5px;
+  margin: 0 1px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  color: white;
+  transition: all 0.3s ease;
 }
 
 #workspaces button:hover {
@@ -54,17 +64,16 @@ tooltip label {
 }
 
 #workspaces button.active {
-  border: 1px solid @outline;
-  border-radius: 5px;
-}
-
-#workspaces button.active:hover {
-  color: @primary;
-  border: 1px solid @primary;
+  border-bottom: 2px solid @primary;
+  /* background-color: @surface_container_lowest; */
 }
 
 #workspaces button.empty {
   color: @outline;
+}
+
+#workspaces button.empty:hover {
+  color: @primary;
 }
 
 /* ----- Taskbar ----- */
@@ -73,6 +82,7 @@ tooltip label {
   border: 1px solid transparent;
   margin: 2px 2px;
   padding: 0 8px;
+  color: @on_background;
 }
 
 #taskbar button.active {
@@ -84,36 +94,35 @@ tooltip label {
 /* ----- Buttons ----- */
 
 #battery,
-#pulseaudio,
 #bluetooth,
 #tray,
 #network {
-  padding: 5px 20px;
+  padding: 0px 10px;
   margin: 2px;
-  border: 1px solid @outline;
-  border-radius: 5px;
+  /* border: 1px solid @outline; */
+  /* border-radius: 5px; */
   transition: all 0.3s ease;
 }
 
 #clock {
-  padding: 5px 20px;
-  margin: 2px;
+  padding: 0px 15px;
+  margin: 4px 0px;
   transition: all 0.3s ease;
 }
 
-#pulseaudio {
-  min-width: 60px;
-}
-
-#network:hover,
+/* #network:hover,
 #bluetooth:hover,
 #tray:hover,
 #pulseaudio:hover {
   color: @primary;
   border: 1px solid @primary;
   transition: all 0.3s ease;
-}
+} */
 
+#network:hover,
+#bluetooth:hover,
+#tray:hover,
+#pulseaudio:hover,
 #clock:hover {
   color: @primary;
   transition: all 0.3s ease;
@@ -141,6 +150,45 @@ tooltip label {
 #bluetooth.no-controller:hover {
   color: @primary;
   transition: all 0.3s ease;
+}
+
+#audio {
+  margin: 4px 0px;
+  border-left: 1px solid @outline_variant;
+  border-right: 1px solid @outline_variant;
+  padding: 0px 7px;
+}
+
+#pulseaudio {
+  min-width: 60px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: 1px @on_background;
+    border-radius: 20px;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 4px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: @outline_variant;
+}
+#pulseaudio-slider highlight {
+    min-width: 0px;
+    border-radius: 5px;
+    background-color: @primary;
+}
+
+#connections {
+  margin: 4px 0px;
+  padding-right: 7px;
+  padding-left: 4px;
+  border-right: 1px solid @outline_variant;
 }
 
 /* ----- Power Buttons ----- */
