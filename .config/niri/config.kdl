@@ -73,7 +73,7 @@ input {
 
 // Run `niri msg outputs` while inside a niri instance.
 // https://yalter.github.io/niri/Configuration:-Outputs
-output "DP-2" {
+output "DP-1" {
     // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
     mode "1920x1080@180.000"
 

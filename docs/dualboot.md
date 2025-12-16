@@ -14,3 +14,13 @@
 
 - Timezone não encontrada (DBeaver):
     - Rodar `sudo timedatectl set-timezone America/Sao_Paulo`
+
+- Bluetooth (br-connection-key-missing)
+    - https://skshm.in/posts/bluetoothsync/
+    - https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing
+
+- Montar automaticamente HDD
+    - Crie as pastas de montagem (ex.: /mnt/disk1)
+    - Rode `lsblk -f` e copie o UUID do HDD
+    - Edite o arquio `/etc/fstab`, seguindo esse modelo caso esteja formatado em NTFS: `UUID=ID-AQUI /mnt/disk1 ntfs3 defaults,noatime,nofail,uid=1000,gid=1000 0 0`
+    - Rode `sudo mount -a` para testar o funcionamento

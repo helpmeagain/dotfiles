@@ -13,7 +13,6 @@ mise
 # Hyperland
 nwg-displays
 matugen
-ohmyposh
 waybar
 hypridle
 hyprlock
@@ -44,6 +43,7 @@ bibata-cursor-theme-bin
 
 ## Desktop
 mpv
+archlinux-xdg-menu
 firefox
 bluetui
 rofi

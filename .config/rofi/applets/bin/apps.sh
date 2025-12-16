@@ -23,9 +23,9 @@ fi
 
 # CMDs (add your apps here)
 term_cmd='kitty'
-file_cmd='kitty -e yazi'
+file_cmd='dolphin'
 text_cmd='code'
-web_cmd='firefox'
+web_cmd='zen-browser'
 music_cmd='spotify-launcher'
 power_cmd="$HOME"/.config/rofi/powermenu/type-2/powermenu.sh
 
