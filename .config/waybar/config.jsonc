@@ -3,10 +3,12 @@
   // "position": "bottom",
   "margin": 3,
   "modules-left": [
-    "custom/archicon"
-    // "wlr/taskbar",
+    "custom/archicon",
+    "hyprland/workspaces", "niri/workspaces"
+    // "wlr/taskbar"
   ],
-  "modules-center": ["hyprland/workspaces", "niri/workspaces"],
+  "modules-center": [
+    "clock"],
   "modules-right": [
     "tray",
     "group/audio",
@@ -15,8 +17,7 @@
     // "bluetooth",
     // "network",
     "group/connections",
-    "battery",
-    "clock"
+    "battery"
     // "group/group-power"
   ],
   "custom/archicon": {
@@ -48,7 +49,7 @@
   },
   "battery": {
     "format": "{capacity}% {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["󰁺", "󰁻","󰁼","󰁽","󰁽", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "tray": {
     "icon-size": 18,
@@ -88,8 +89,6 @@
     "format": "{icon}  {volume}%",
     "format-muted": "  0%",
     "format-icons": {
-      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
       "headphone": "",
       "headset": "",
       "default": ["", ""]

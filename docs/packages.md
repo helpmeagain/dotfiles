@@ -1,4 +1,5 @@
 ## Essentials
+
 base-devel
 nano
 git
@@ -9,8 +10,10 @@ docker-compose
 stow
 zsh
 mise
+firewalld
 
 # Hyperland
+
 nwg-displays
 matugen
 waybar
@@ -18,18 +21,24 @@ hypridle
 hyprlock
 hyprshot
 swww
+brightnessctl
+pavucontrol
+bluetui
+rofi
+archlinux-xdg-menu
 
 ## Utils
-yazi 
-ffmpeg 
-7zip 
-jq 
-poppler 
-fd 
-ripgrep 
-fzf 
+
+yazi
+ffmpeg
+7zip
+jq
+poppler
+fd
+ripgrep
+fzf
 zoxide
-resvg 
+resvg
 imagemagick
 lazydocker
 lazygit
@@ -37,14 +46,21 @@ btop
 fastfetch
 
 ### AUR
+
 oh-my-posh
 visual-studio-code-bin
 bibata-cursor-theme-bin
+galaxybudsclient-bin
+zen-browser-bin
 
 ## Desktop
 mpv
 archlinux-xdg-menu
 firefox
-bluetui
-rofi
 spotify-launcher
+gwenview 
+veracrypt
+qbittorrent
+
+## laptop
+tlp

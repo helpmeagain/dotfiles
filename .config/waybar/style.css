@@ -57,6 +57,7 @@ tooltip label {
   border-bottom: 2px solid transparent;
   background: transparent;
   transition: all 0.3s ease;
+  color: @on_surface;
 }
 
 #workspaces button:hover {
@@ -96,6 +97,7 @@ tooltip label {
 #battery,
 #bluetooth,
 #tray,
+#battery,
 #network {
   padding: 0px 10px;
   margin: 2px;
@@ -105,7 +107,7 @@ tooltip label {
 }
 
 #clock {
-  padding: 0px 15px;
+  padding: 0px;
   margin: 4px 0px;
   transition: all 0.3s ease;
 }
@@ -128,14 +130,17 @@ tooltip label {
   transition: all 0.3s ease;
 }
 
+
 #battery {
-  background-color: #ffffff;
-  color: black;
+  margin: 4px 8px;
+  padding-left: 12px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 1px solid @outline_variant;
 }
 
 #battery.charging {
-  color: white;
-  background-color: #26a65b;
+  border-bottom: 2px solid #26a65b;
 }
 
 #bluetooth.off,
@@ -155,7 +160,6 @@ tooltip label {
 #audio {
   margin: 4px 0px;
   border-left: 1px solid @outline_variant;
-  border-right: 1px solid @outline_variant;
   padding: 0px 7px;
 }
 
@@ -171,24 +175,27 @@ tooltip label {
     border: 1px @on_background;
     border-radius: 20px;
     box-shadow: none;
+    background: @on_surface;
 }
+
 #pulseaudio-slider trough {
     min-height: 4px;
     min-width: 80px;
     border-radius: 5px;
-    background-color: @outline_variant;
+    background: @outline_variant;
 }
+
 #pulseaudio-slider highlight {
     min-width: 0px;
     border-radius: 5px;
-    background-color: @primary;
+    background: @primary;
 }
 
 #connections {
   margin: 4px 0px;
-  padding-right: 7px;
+  padding-right: 0px;
   padding-left: 4px;
-  border-right: 1px solid @outline_variant;
+  border-left: 1px solid @outline_variant;
 }
 
 /* ----- Power Buttons ----- */

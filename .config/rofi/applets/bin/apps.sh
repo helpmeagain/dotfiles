@@ -32,19 +32,19 @@ power_cmd="$HOME"/.config/rofi/powermenu/type-2/powermenu.sh
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Terminal <span weight='light' size='small'><i>($term_cmd)</i></span>"
-	option_2=" Files <span weight='light' size='small'><i>($file_cmd)</i></span>"
-	option_3=" Editor <span weight='light' size='small'><i>($text_cmd)</i></span>"
-	option_4=" Browser <span weight='light' size='small'><i>($web_cmd)</i></span>"
-	option_5=" Music <span weight='light' size='small'><i>($music_cmd)</i></span>"
-	option_6=" Power <span weight='light' size='small'><i>($power_cmd)</i></span>"
+    option_1=" Terminal <span weight='light' size='small'><i>($term_cmd)</i></span>"
+    option_2="󰝰 Files <span weight='light' size='small'><i>($file_cmd)</i></span>"
+    option_3="󰅩 Editor <span weight='light' size='small'><i>($text_cmd)</i></span>"
+    option_4="󰖟 Browser <span weight='light' size='small'><i>($web_cmd)</i></span>"
+    option_5="󰝚 Music <span weight='light' size='small'><i>($music_cmd)</i></span>"
+    option_6=" Power <span weight='light' size='small'><i>($power_cmd)</i></span>"
 else
-	option_1=""
-	option_2=""
-	option_3=""
-	option_4=""
-	option_5=""
-	option_6=""
+    option_1=""
+    option_2="󰝰"
+    option_3="󰅩"
+    option_4="󰖟"
+    option_5="󰝚"
+    option_6=""
 fi
 
 # Rofi CMD
