@@ -1,5 +1,7 @@
+MenuBar=Disabled
+
 [General]
-TerminalApplication=kitty
+RememberOpenedTabs=false
 Version=202
 ViewPropsTimestamp=2025,11,10,11,37,3.015
 
@@ -9,6 +11,9 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=appimagethumbnail,cursorthumbnail,fontthumbnail,audiothumbnail,djvuthumbnail,glycin-heif,comicbookthumbnail,opendocumentthumbnail,kraorathumbnail,ebookthumbnail,windowsexethumbnail,glycin-image-rs,glycin-svg,imagethumbnail,windowsimagethumbnail,exrthumbnail,jpegthumbnail,svgthumbnail,glycin-jxl,directorythumbnail
 
 [UiSettings]
 ColorScheme=BreezeDark

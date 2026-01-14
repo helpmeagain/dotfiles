@@ -193,7 +193,7 @@ tooltip label {
 
 #connections {
   margin: 4px 0px;
-  padding-right: 0px;
+  padding-right: 8px;
   padding-left: 4px;
   border-left: 1px solid @outline_variant;
 }
