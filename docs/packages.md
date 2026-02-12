@@ -1,4 +1,5 @@
 ## Before everything
+
 ```bash
 sudo pacman -Syu
 ```
@@ -6,10 +7,11 @@ sudo pacman -Syu
 ## Essentials
 
 ```bash
-sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh mise firewalld
+sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh mise firewalld ntfs-3g
 ```
 
 ### YAY
+
 ```bash
 cd /tmp
 git clone https://aur.archlinux.org/yay.git
@@ -20,23 +22,28 @@ makepkg -si
 ### Post install
 
 #### Git
+
 ```bash
 git config --global user.name "name"
 git config --global user.email email@email.com
 ```
 
 #### Docker
+
 ```bash
 sudo systemctl enable --now docker && sudo groupadd -f docker && sudo usermod -aG docker $USER
 ```
 
 #### ZSH
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 yay -S oh-my-posh
 chsh -s /bin/zsh
 ```
+
 ## Snapshots
+
 ```bash
 sudo pacman -S snapper snap-pac grub-btrfs inotify-tools
 yay -S btrfs-assistant
@@ -46,6 +53,7 @@ sudo snapper -c root set-config ALLOW_USERS="$USER" SYNC_ALL=yes
 sudo snapper -c home set-config ALLOW_USERS="$USER" SYNC_ALL=yes
 sudo pacman -S mlocate
 ```
+
 Editar o arquivo updatedb.conf (`sudo nano /etc/updatedb.conf`) e adicionar .snapshots:
 `PRUNENAMES = ".git .hg .svn .snapshots"`
 
@@ -62,9 +70,11 @@ sudo snapper -c home create \
   --description "BASELINE - Home limpa" \
   --cleanup-algorithm empty
 ```
+
 ## General Applications
+
 ```bash
-sudo pacman -S --needed mpv firefox gwenview veracrypt qbittorrent noto-fonts-cjk noto-fonts-emoji noto-fonts
+sudo pacman -S --needed mpv firefox gwenview veracrypt qbittorrent noto-fonts-cjk noto-fonts-emoji noto-fonts ffmpegthumbs kdegraphics-thumbnailers
 ```
 
 ### AUR
@@ -74,6 +84,7 @@ sudo yay -S --needed visual-studio-code-bin bibata-cursor-theme-bin galaxybudscl
 ```
 
 ## Terminal Utils
+
 ```bash
 sudo pacman -S --needed lazydocker lazygit btop fastfetch
 ```
@@ -85,6 +96,7 @@ sudo pacman -S --needed nwg-displays matugen waybar hypridle hyprlock hyprshot s
 ```
 
 ## Laptop
+
 ```bash
 sudo pacman -S --needed tlp
 ```
