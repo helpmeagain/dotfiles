@@ -1,9 +1,13 @@
-eval "$(starship init zsh)"
+precmd() { precmd() { echo "" } }
+
 eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+
 
 # alias
 alias ls='ls --color=auto'
 alias ll='ls -lah'
+alias clear="precmd() { precmd() { echo } } && clear"
 
 # Yazi
 export EDITOR="code"
