@@ -1,0 +1,62 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[  ](bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}})\
+[](fg:{{colors.primary.dark.hex}} bg:{{colors.primary_container.dark.hex}})\
+$directory\
+[](fg:{{colors.primary_container.dark.hex}} bg:{{colors.secondary_container.dark.hex}})\
+$git_branch\
+$git_status\
+[](fg:{{colors.secondary_container.dark.hex}} bg:{{colors.surface_container_high.dark.hex}})\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:{{colors.surface_container_high.dark.hex}} bg:{{colors.surface_container.dark.hex}})\
+$time\
+[ ](fg:{{colors.surface_container.dark.hex}})\
+"""
+
+[directory]
+# Usando o container primário (mais claro que os outros containers)
+style = "fg:{{colors.on_primary_container.dark.hex}} bg:{{colors.primary_container.dark.hex}}"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+# Degrau médio de brilho
+style = "bg:{{colors.secondary_container.dark.hex}}"
+format = '[[ $symbol $branch ](fg:{{colors.on_secondary_container.dark.hex}} bg:{{colors.secondary_container.dark.hex}})]($style)'
+
+[git_status]
+style = "bg:{{colors.secondary_container.dark.hex}}"
+format = '[[($all_status$ahead_behind )](fg:{{colors.on_secondary_container.dark.hex}} bg:{{colors.secondary_container.dark.hex}})]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:{{colors.surface_container_high.dark.hex}}"
+format = '[[ $symbol ($version) ](fg:{{colors.primary.dark.hex}} bg:{{colors.surface_container_high.dark.hex}})]($style)'
+
+[rust]
+symbol = ""
+style = "bg:{{colors.surface_container_high.dark.hex}}"
+format = '[[ $symbol ($version) ](fg:{{colors.secondary.dark.hex}} bg:{{colors.surface_container_high.dark.hex}})]($style)'
+
+[golang]
+symbol = ""
+style = "bg:{{colors.surface_container_high.dark.hex}}"
+format = '[[ $symbol ($version) ](fg:{{colors.tertiary.dark.hex}} bg:{{colors.surface_container_high.dark.hex}})]($style)'
+
+[php]
+symbol = ""
+style = "bg:{{colors.surface_container_high.dark.hex}}"
+format = '[[ $symbol ($version) ](fg:{{colors.secondary_fixed.dark.hex}} bg:{{colors.surface_container_high.dark.hex}})]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+# O ponto mais escuro do prompt
+style = "bg:{{colors.surface_container.dark.hex}}"
+format = '[[ $time ](fg:{{colors.on_surface_variant.dark.hex}} bg:{{colors.surface_container.dark.hex}})]($style)'

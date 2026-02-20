@@ -1,0 +1,62 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[  ](bg:#989db3 fg:#111115)\
+[](fg:#989db3 bg:#414558)\
+$directory\
+[](fg:#414558 bg:#383649)\
+$git_branch\
+$git_status\
+[](fg:#383649 bg:#2a2b32)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:#2a2b32 bg:#2f3037)\
+$time\
+[ ](fg:#2f3037)\
+"""
+
+[directory]
+# Usando o container primário (mais claro que os outros containers)
+style = "fg:#e4e5e7 bg:#414558"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+# Degrau médio de brilho
+style = "bg:#383649"
+format = '[[ $symbol $branch ](fg:#e4e4e7 bg:#383649)]($style)'
+
+[git_status]
+style = "bg:#383649"
+format = '[[($all_status$ahead_behind )](fg:#e4e4e7 bg:#383649)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#2a2b32"
+format = '[[ $symbol ($version) ](fg:#989db3 bg:#2a2b32)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#2a2b32"
+format = '[[ $symbol ($version) ](fg:#8f8da5 bg:#2a2b32)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#2a2b32"
+format = '[[ $symbol ($version) ](fg:#968fa3 bg:#2a2b32)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#2a2b32"
+format = '[[ $symbol ($version) ](fg:#d5d4dd bg:#2a2b32)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+# O ponto mais escuro do prompt
+style = "bg:#2f3037"
+format = '[[ $time ](fg:#b0b1b5 bg:#2f3037)]($style)'

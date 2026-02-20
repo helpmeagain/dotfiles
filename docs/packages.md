@@ -7,7 +7,7 @@ sudo pacman -Syu
 ## Essentials
 
 ```bash
-sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh mise firewalld ntfs-3g
+sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship mise firewalld ntfs-3g
 ```
 
 ### YAY
@@ -37,8 +37,7 @@ sudo systemctl enable --now docker && sudo groupadd -f docker && sudo usermod -a
 #### ZSH
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-yay -S oh-my-posh
+sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 chsh -s /bin/zsh
 ```
 

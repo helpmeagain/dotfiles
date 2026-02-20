@@ -1,0 +1,8 @@
+[config]
+
+[templates]
+
+[templates.starship]
+input_path = "~/.config/noctalia/templates/starship.toml"
+output_path = "~/.config/starship.toml"
+
