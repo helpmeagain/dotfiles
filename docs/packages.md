@@ -73,7 +73,7 @@ sudo snapper -c home create \
 ## General Applications
 
 ```bash
-sudo pacman -S --needed mpv firefox gwenview veracrypt qbittorrent noto-fonts-cjk noto-fonts-emoji noto-fonts ffmpegthumbs kdegraphics-thumbnailers
+sudo pacman -S --needed mpv firefox gwenview veracrypt qbittorrent flatseal noto-fonts-cjk noto-fonts-emoji noto-fonts ffmpegthumbs kdegraphics-thumbnailers
 ```
 
 ### AUR

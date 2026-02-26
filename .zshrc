@@ -1,8 +1,17 @@
 precmd() { precmd() { echo "" } }
 
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000
+
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
+# bind
+bindkey "^H" backward-delete-word
+bindkey '^[[3;5~' kill-word
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 
 # alias
 alias ls='ls --color=auto'

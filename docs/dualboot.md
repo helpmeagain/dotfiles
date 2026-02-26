@@ -47,3 +47,28 @@
     - Verificar o status com `sbctl status`
     - Reiniciar o PC e habilitar Secure boot
     - ATENÇÃO: se atualizar qualquer coisa do GRUB, é necessário assinar novamente. O Kernel já será assinado automaticamente com as atualizações
+
+- Maquina virtual
+    - sudo pacman -Syu qemu virt-manager libvirt dnsmasq ebtables iptables-nft
+    - sudo systemctl enable --now libvirtd 
+    - sudo usermod -aG libvirt $USER
+    - Abrir o virt-manager, ir em file, adicionar conexão e conectar com o QEMU/KVM
+
+- Local LLM (RADEON GPU)
+    - sudo pacman -S ollama-rocm
+    - Para baixar os modelos de IA em dispositivo diferente:
+        - sudo mkdir -p /mnt/meu_hd/ollama_models
+        - sudo chown -R ollama:ollama /mnt/meu_hd/ollama_models
+        - sudo systemctl edit ollama.service
+        - Adicionar no início do arquivo:
+        ```bash
+        [Service]
+        Environment="OLLAMA_MODELS=/mnt/disk3/ollama_models"
+        Environment="OLLAMA_HOST=0.0.0.0"
+        Environment="OLLAMA_ORIGINS=*"
+        Environment="GPU_MAX_HW_QUEUES=1"
+        ```
+        - sudo systemctl daemon-reload
+        - sudo systemctl restart ollama
+    - sudo systemctl enable --now ollama
+
