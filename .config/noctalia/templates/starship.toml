@@ -3,7 +3,9 @@
 add_newline = false
 
 format = """
-[  ](bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}})\
+[]({{colors.primary.dark.hex}})\
+$os\
+$username\
 [](fg:{{colors.primary.dark.hex}} bg:{{colors.primary_container.dark.hex}})\
 $directory\
 [](fg:{{colors.primary_container.dark.hex}} bg:{{colors.secondary_container.dark.hex}})\
@@ -18,6 +20,42 @@ $php\
 $time\
 [ ](fg:{{colors.surface_container.dark.hex}})\
 """
+
+[username]
+show_always = true
+style_user = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
+style_root = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
+format = '[$user ](bold $style)'
+disabled = false
+
+[os]
+disabled = false
+style = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
+format = '[$symbol ]($style)'
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
 
 [directory]
 style = "fg:{{colors.on_primary_container.dark.hex}} bg:{{colors.primary_container.dark.hex}}"

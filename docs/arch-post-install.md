@@ -11,11 +11,16 @@
     - https://wiki.archlinux.org/title/Bluetooth#Dual_boot_pairing
     - https://skshm.in/posts/bluetoothsync/
 
+## Bloquear root
+- Usar `sudo passwd -l root`
+- Para desbloquear, usar `sudo passwd -u root`
+
 ## Snapshots
 
 ```bash
 sudo pacman -S snapper snap-pac grub-btrfs inotify-tools
 yay -S btrfs-assistant
+paru -S btrfs-assistant
 sudo snapper -c root create-config /
 sudo snapper -c home create-config /home
 sudo snapper -c root set-config ALLOW_USERS="$USER" SYNC_ALL=yes
@@ -56,7 +61,7 @@ sudo snapper -c home create \
 ## Secure boot
 
 - Colocar o Secure Boot em `Setup Mode` na BIOS
-- Baixa sbctl `sudo pacman -S sbctl`
+- Baixar sbctl `sudo pacman -S sbctl`
 - Criar chaves com `sbctl create-keys`
 - Use `sudo sbctl status` e verifique se o `Setup Mode` está habilitado e o `Owner GUID` setado
 - Cadastrar chaves `sbctl enroll-keys -m` (IMPORTANTE, a flag `-m` é necessária para dual boot. Caso contrário, pode deixar sem)
@@ -64,7 +69,7 @@ sudo snapper -c home create \
 ```bash
 sudo grub-install \\n  --target=x86_64-efi \\n  --efi-directory=/boot \\n  --bootloader-id=GRUB \\n  --modules="tpm" \\n  --disable-shim-lock
 ```
-- Atualizar GUB com `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+- Atualizar GRUB com `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 - Assinar arquivos necessários (GRUB, Kernel, etc) com `sudo sbctl verify | sudo sed 's/✗ /sbctl sign -s /e'`
 - Atualizar mkinitcpio `sudo mkinitcpio -P`
 - Verificar as assinaturas com `sudo sbctl list-files`
@@ -86,6 +91,9 @@ sudo grub-install \\n  --target=x86_64-efi \\n  --efi-directory=/boot \\n  --boo
     - sudo systemctl enable --now libvirtd 
     - sudo usermod -aG libvirt $USER
     - Abrir o virt-manager, ir em file, adicionar conexão e conectar com o QEMU/KVM
+    - sudo virsh net-start default
+    - sudo virsh net-autostart default
+    - Lembrar de verificar firewall
 
 - Local LLM (RADEON GPU)
     - sudo pacman -S ollama-rocm

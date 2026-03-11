@@ -7,11 +7,14 @@ SAVEHIST=5000
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
-# bind
-bindkey "^H" backward-delete-word
-bindkey '^[[3;5~' kill-word
-bindkey '^[[1;5C' forward-word
-bindkey '^[[1;5D' backward-word
+# binds
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # alias
 alias ls='ls --color=auto'
@@ -34,3 +37,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+source <(fzf --zsh) 
+
+# disable beep
+unsetopt beep
+unsetopt list_beep
+export NO_BEEP=1

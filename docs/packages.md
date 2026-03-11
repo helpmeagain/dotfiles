@@ -15,7 +15,7 @@ sudo pacman -Syu
 ### Essentials
 
 ```bash
-sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship mise firewalld ntfs-3g
+sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship mise firewalld ntfs-3g fzf
 ```
 
 #### AUR Helper
@@ -41,17 +41,17 @@ makepkg -si
 ### General Applications
 
 ```bash
-sudo pacman -S --needed mpv firefox gwenview veracrypt qbittorrent krita flatseal noto-fonts-cjk noto-fonts-emoji noto-fonts ffmpegthumbs kdegraphics-thumbnailers
+sudo pacman -S --needed mpv firefox gwenview firewall-config veracrypt qbittorrent krita kcalc flatseal noto-fonts-cjk noto-fonts-emoji noto-fonts ffmpegthumbs kdegraphics-thumbnailers
 ```
 
 ### AUR Packages
 
 ```bash
-sudo yay -S --needed visual-studio-code-bin bibata-cursor-theme-bin
+yay -S --needed visual-studio-code-bin bibata-cursor-theme-bin
 ```
 
 ```bash
-sudo paru -S --needed visual-studio-code-bin bibata-cursor-theme-bin
+paru -S --needed visual-studio-code-bin bibata-cursor-theme-bin
 ```
 
 ### Laptop
@@ -69,11 +69,11 @@ sudo pacman -S --needed lazydocker lazygit btop fastfetch
 ### Hyperland specific
 
 ```bash
-sudo yay -S --needed hypridle hyprshot archlinux-xdg-menu noctalia-shell
+yay -S --needed hypridle hyprshot archlinux-xdg-menu noctalia-shell
 ```
 
 ```bash
-sudo paru -S --needed hypridle hyprshot archlinux-xdg-menu noctalia-shell
+paru -S --needed hypridle hyprshot archlinux-xdg-menu noctalia-shell
 ```
 ## Arch Linux WSL Environment
 
@@ -94,7 +94,7 @@ reflector --country Brazil --latest 10 --sort rate --save /etc/pacman.d/mirrorli
 ### Essentials
 
 ```bash
-pacman -S --needed base-devel nano git curl wget sudo unzip zip zsh shadow docker docker-compose stow zsh starship mise --noconfirm
+pacman -S --needed base-devel nano git curl wget sudo unzip zip zsh shadow docker docker-compose stow zsh starship mise fzf --noconfirm
 ```
 
 ### Mudar local
@@ -155,3 +155,7 @@ chsh -s /bin/zsh
 ### Mise
 - Listar versões `mise ls-remote python`
 - Usar globalmente uma versão `mise use --global python@3.14`
+
+## KDE Files association
+
+`sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.menu`
