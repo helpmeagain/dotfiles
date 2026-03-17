@@ -20,6 +20,10 @@ bindkey "^[[1;5D" backward-word
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias clear="precmd() { precmd() { echo } } && clear"
+alias cat="bat"
+
+alias ubuntu="distrobox enter ubuntu"
+alias kali="distrobox enter kali"
 
 # Yazi
 export EDITOR="code"

@@ -18,9 +18,7 @@
 ## Snapshots
 
 ```bash
-sudo pacman -S snapper snap-pac grub-btrfs inotify-tools
-yay -S btrfs-assistant
-paru -S btrfs-assistant
+sudo pacman -S snapper snap-pac grub-btrfs inotify-tools btrfs-assistant
 sudo snapper -c root create-config /
 sudo snapper -c home create-config /home
 sudo snapper -c root set-config ALLOW_USERS="$USER" SYNC_ALL=yes
@@ -44,6 +42,7 @@ sudo snapper -c home create \
   --description "BASELINE - Home limpa" \
   --cleanup-algorithm empty
 ```
+Desabilitar copy-on-write: `sudo chattr +C /diretorio/aqui` (/var/lib/containerd, /var/lib/docker)
 
 ## GRUB
 

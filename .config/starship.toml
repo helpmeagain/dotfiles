@@ -3,59 +3,97 @@
 add_newline = false
 
 format = """
-[  ](bg:#989db3 fg:#111115)\
-[](fg:#989db3 bg:#414558)\
+[](#ffb4a8)\
+$os\
+$username\
+[](fg:#ffb4a8 bg:#920401)\
 $directory\
-[](fg:#414558 bg:#383649)\
+[](fg:#920401 bg:#7c2c22)\
 $git_branch\
 $git_status\
-[](fg:#383649 bg:#2a2b32)\
+[](fg:#7c2c22 bg:#362623)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#2a2b32 bg:#2f3037)\
+[](fg:#362623 bg:#2b1c19)\
 $time\
-[ ](fg:#2f3037)\
+[ ](fg:#2b1c19)\
 """
 
+[username]
+show_always = true
+style_user = "bg:#ffb4a8 fg:#690100"
+style_root = "bg:#ffb4a8 fg:#690100"
+format = '[$user ](bold $style)'
+disabled = false
+
+[os]
+disabled = false
+style = "bg:#ffb4a8 fg:#690100"
+format = '[$symbol ]($style)'
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
 [directory]
-style = "fg:#e4e5e7 bg:#414558"
+style = "fg:#ffdad4 bg:#920401"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#383649"
-format = '[[ $symbol $branch ](fg:#e4e4e7 bg:#383649)]($style)'
+style = "bg:#7c2c22"
+format = '[[ $symbol $branch ](fg:#ffdad4 bg:#7c2c22)]($style)'
 
 [git_status]
-style = "bg:#383649"
-format = '[[($all_status$ahead_behind )](fg:#e4e4e7 bg:#383649)]($style)'
+style = "bg:#7c2c22"
+format = '[[($all_status$ahead_behind )](fg:#ffdad4 bg:#7c2c22)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#2a2b32"
-format = '[[ $symbol ($version) ](fg:#989db3 bg:#2a2b32)]($style)'
+style = "bg:#362623"
+format = '[[ $symbol ($version) ](fg:#ffb4a8 bg:#362623)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#2a2b32"
-format = '[[ $symbol ($version) ](fg:#8f8da5 bg:#2a2b32)]($style)'
+style = "bg:#362623"
+format = '[[ $symbol ($version) ](fg:#ffb4a8 bg:#362623)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#2a2b32"
-format = '[[ $symbol ($version) ](fg:#968fa3 bg:#2a2b32)]($style)'
+style = "bg:#362623"
+format = '[[ $symbol ($version) ](fg:#ffba3e bg:#362623)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#2a2b32"
-format = '[[ $symbol ($version) ](fg:#d5d4dd bg:#2a2b32)]($style)'
+style = "bg:#362623"
+format = '[[ $symbol ($version) ](fg:#ffdad4 bg:#362623)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#2f3037"
-format = '[[ $time ](fg:#b0b1b5 bg:#2f3037)]($style)'
+style = "bg:#2b1c19"
+format = '[[ $time ](fg:#e3beb8 bg:#2b1c19)]($style)'

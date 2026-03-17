@@ -15,7 +15,7 @@ sudo pacman -Syu
 ### Essentials
 
 ```bash
-sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship mise firewalld ntfs-3g fzf
+sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship bat mise firewalld ntfs-3g fzf
 ```
 
 #### AUR Helper
@@ -63,7 +63,7 @@ sudo pacman -S --needed tlp
 ### Terminal Utils
 
 ```bash
-sudo pacman -S --needed lazydocker lazygit btop fastfetch
+sudo pacman -S --needed lazydocker lazygit btop fastfetch ncdu
 ```
 
 ### Hyperland specific
@@ -94,7 +94,7 @@ reflector --country Brazil --latest 10 --sort rate --save /etc/pacman.d/mirrorli
 ### Essentials
 
 ```bash
-pacman -S --needed base-devel nano git curl wget sudo unzip zip zsh shadow docker docker-compose stow zsh starship mise fzf --noconfirm
+pacman -S --needed base-devel nano git curl wget sudo unzip zip zsh shadow docker docker-compose stow zsh starship bat mise fzf --noconfirm
 ```
 
 ### Mudar local
