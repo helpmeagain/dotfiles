@@ -111,3 +111,22 @@ sudo grub-install \\n  --target=x86_64-efi \\n  --efi-directory=/boot \\n  --boo
         - sudo systemctl daemon-reload
         - sudo systemctl restart ollama
     - sudo systemctl enable --now ollama
+
+- Distrobox
+    - Instalar: `sudo pacman -S distrobox`
+    - Baixar distro: `distrobox create --name ubuntu --image ubuntu:latest`
+    - Kali Linux:
+        - Baixar Kali: `distrobox create --name kali --image docker.io/kalilinux/kali-rolling`
+        - Entrar no Kali: `distrobox enter kali`
+        - Defina a senha
+        - Configurar teclado e starship: 
+        ```bash
+        export TERM=xterm
+        export DEBIAN_FRONTEND=noninteractive
+        sudo -E apt install keyboard-configuration -y
+        sudo -E dpkg --configure -a
+        sudo -E apt -f install
+        sudo apt install starship - y
+        exec zsh
+        ```
+        - Baixar dependências do Kali: `sudo apt install kali-linux-default -y`

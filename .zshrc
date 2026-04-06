@@ -21,6 +21,8 @@ alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias clear="precmd() { precmd() { echo } } && clear"
 alias cat="bat"
+alias vim="nvim"
+alias vi="nvim"
 
 alias ubuntu="distrobox enter ubuntu"
 alias kali="distrobox enter kali"
