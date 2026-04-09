@@ -2,11 +2,11 @@
 Type=Service
 X-KDE-ServiceTypes=KonqPopupMenu/Plugin
 MimeType=inode/directory;
-Actions=openInVSCode;
+Actions=openInVim;
 X-KDE-StartupNotify=false
 X-KDE-Priority=TopLevel
 
-[Desktop Action openInVSCode]
-Name=Abrir com Visual Studio Code
-Exec=code "%f"
-Icon=visual-studio-code
+[Desktop Action openInVim]
+Name=Abrir com Neovim
+Exec=kitty --hold -e nvim "%f"
+Icon=nvim

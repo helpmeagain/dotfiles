@@ -126,7 +126,7 @@ sudo grub-install \\n  --target=x86_64-efi \\n  --efi-directory=/boot \\n  --boo
         sudo -E apt install keyboard-configuration -y
         sudo -E dpkg --configure -a
         sudo -E apt -f install
-        sudo apt install starship - y
+        sudo apt install starship fzf - y
         exec zsh
         ```
         - Baixar dependências do Kali: `sudo apt install kali-linux-default -y`

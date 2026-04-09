@@ -2,4 +2,4 @@
 Type=Application
 Name=NetworkManager Applet
 Exec=nm-applet
-NotShowIn=KDE;GNOME;niri;
+NotShowIn=KDE;GNOME;niri;hyprland

@@ -50,3 +50,4 @@ source <(fzf --zsh)
 unsetopt beep
 unsetopt list_beep
 export NO_BEEP=1
+export PATH=$HOME/.local/bin:$PATH
