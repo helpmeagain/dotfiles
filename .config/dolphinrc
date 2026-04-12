@@ -16,4 +16,4 @@ MenuBar=Disabled
 Plugins=appimagethumbnail,cursorthumbnail,fontthumbnail,ffmpegthumbs,audiothumbnail,djvuthumbnail,blenderthumbnail,mobithumbnail,gsthumbnail,rawthumbnail,glycin-heif,comicbookthumbnail,opendocumentthumbnail,kraorathumbnail,ebookthumbnail,windowsexethumbnail,glycin-image-rs,glycin-svg,imagethumbnail,windowsimagethumbnail,exrthumbnail,jpegthumbnail,svgthumbnail,glycin-jxl,directorythumbnail
 
 [UiSettings]
-ColorScheme=BreezeDark
+ColorScheme=DankMatugen

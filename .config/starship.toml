@@ -3,34 +3,41 @@
 add_newline = false
 
 format = """
-[](#ffb4a8)\
-$os\
+[](#ffb3b2)\
 $username\
-[](fg:#ffb4a8 bg:#920401)\
+$os\
+$hostname\
+[](fg:#ffb3b2 bg:#733334)\
 $directory\
-[](fg:#920401 bg:#7c2c22)\
+[](fg:#733334 bg:#5d3f3f)\
 $git_branch\
 $git_status\
-[](fg:#7c2c22 bg:#362623)\
+[](fg:#5d3f3f bg:#322827)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#362623 bg:#2b1c19)\
+[](fg:#322827 bg:#271d1d)\
 $time\
-[ ](fg:#2b1c19)\
+[ ](fg:#271d1d)\
 """
 
 [username]
 show_always = true
-style_user = "bg:#ffb4a8 fg:#690100"
-style_root = "bg:#ffb4a8 fg:#690100"
-format = '[$user ](bold $style)'
+style_user = "bg:#ffb3b2 fg:#561d1f"
+style_root = "bg:#ffb3b2 fg:#561d1f"
+format = '[ $user ](bold $style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bg:#ffb3b2 fg:#561d1f"
+format = '[$hostname ](bold $style)'
 disabled = false
 
 [os]
 disabled = false
-style = "bg:#ffb4a8 fg:#690100"
+style = "bg:#ffb3b2 fg:#561d1f"
 format = '[$symbol ]($style)'
 
 [os.symbols]
@@ -59,42 +66,42 @@ Pop = ""
 Kali = " "
 
 [directory]
-style = "fg:#ffdad4 bg:#920401"
+style = "fg:#ffdad9 bg:#733334"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#7c2c22"
-format = '[[ $symbol $branch ](fg:#ffdad4 bg:#7c2c22)]($style)'
+style = "bg:#5d3f3f"
+format = '[[ $symbol $branch ](fg:#ffdad9 bg:#5d3f3f)]($style)'
 
 [git_status]
-style = "bg:#7c2c22"
-format = '[[($all_status$ahead_behind )](fg:#ffdad4 bg:#7c2c22)]($style)'
+style = "bg:#5d3f3f"
+format = '[[($all_status$ahead_behind )](fg:#ffdad9 bg:#5d3f3f)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#362623"
-format = '[[ $symbol ($version) ](fg:#ffb4a8 bg:#362623)]($style)'
+style = "bg:#322827"
+format = '[[ $symbol ($version) ](fg:#ffb3b2 bg:#322827)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:#362623"
-format = '[[ $symbol ($version) ](fg:#ffb4a8 bg:#362623)]($style)'
+style = "bg:#322827"
+format = '[[ $symbol ($version) ](fg:#e6bdbb bg:#322827)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:#362623"
-format = '[[ $symbol ($version) ](fg:#ffba3e bg:#362623)]($style)'
+style = "bg:#322827"
+format = '[[ $symbol ($version) ](fg:#e4c18d bg:#322827)]($style)'
 
 [php]
 symbol = ""
-style = "bg:#362623"
-format = '[[ $symbol ($version) ](fg:#ffdad4 bg:#362623)]($style)'
+style = "bg:#322827"
+format = '[[ $symbol ($version) ](fg:#ffdad9 bg:#322827)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#2b1c19"
-format = '[[ $time ](fg:#e3beb8 bg:#2b1c19)]($style)'
+style = "bg:#271d1d"
+format = '[[ $time ](fg:#d7c1c0 bg:#271d1d)]($style)'
