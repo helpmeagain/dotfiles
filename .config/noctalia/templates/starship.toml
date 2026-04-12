@@ -4,8 +4,9 @@ add_newline = false
 
 format = """
 []({{colors.primary.dark.hex}})\
-$os\
 $username\
+$os\
+$hostname\
 [](fg:{{colors.primary.dark.hex}} bg:{{colors.primary_container.dark.hex}})\
 $directory\
 [](fg:{{colors.primary_container.dark.hex}} bg:{{colors.secondary_container.dark.hex}})\
@@ -25,7 +26,13 @@ $time\
 show_always = true
 style_user = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
 style_root = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
-format = '[$user ](bold $style)'
+format = '[ $user ](bold $style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bg:{{colors.primary.dark.hex}} fg:{{colors.on_primary.dark.hex}}"
+format = '[$hostname ](bold $style)'
 disabled = false
 
 [os]
@@ -56,6 +63,7 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 Pop = ""
+Kali = " "
 
 [directory]
 style = "fg:{{colors.on_primary_container.dark.hex}} bg:{{colors.primary_container.dark.hex}}"
