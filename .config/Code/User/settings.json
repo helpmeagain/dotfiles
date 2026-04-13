@@ -1,0 +1,105 @@
+{
+  "symbols.hidesExplorerArrows": false,
+  "workbench.layoutControl.enabled": false,
+  "catppuccin.italicComments": false,
+  "catppuccin.italicKeywords": false,
+  "workbench.iconTheme": "material-icon-theme",
+  // "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace",
+  // "editor.fontSize": 15,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.selectionHighlight": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#68686880"
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.editor.labelFormat": "short",
+  "workbench.activityBar.location": "top",
+  "breadcrumbs.enabled": false,
+  "workbench.statusBar.visible": true,
+  "window.titleBarStyle": "custom",
+  "catppuccin.workbenchMode": "flat",
+  "catppuccin.colorOverrides": {
+  },
+  "terminal.integrated.env.windows": {},
+  "console-ninja.featureSet": "Community",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "prisma.showPrismaDataPlatformNotification": false,
+  "cSpell.language": "en,pt,pt_BR",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "settingsSync.ignoredExtensions": [
+    "be5invis.vscode-icontheme-nomo-dark",
+    "miguelsolorio.symbols",
+    "formulahendry.auto-rename-tag",
+    "bradlc.vscode-tailwindcss"
+  ],
+  "git.autofetch": true,
+  "files.exclude": {
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+  },
+  "git.allowForcePush": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor"
+  },
+  "window.customTitleBarVisibility": "auto",
+  "window.commandCenter": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vscode-office.openOutline": false,
+  "cmake.additionalCompilerSearchDirs": [
+    "C:/msys64/mingw32/bin",
+    "C:/msys64/mingw64/bin",
+    "C:/msys64/clang32/bin",
+    "C:/msys64/clang64/bin",
+    "C:/msys64/clangarm64/bin",
+    "C:/msys64/ucrt64/bin"
+  ],
+  "code-runner.clearPreviousOutput": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "postman.mcp.notifications.postmanMCP": false,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.analysis.typeCheckingMode": "strict",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.console.fontFamily": "JetBrainsMono Nerd Font",
+  "workbench.colorTheme": "Dark Modern"
+}
