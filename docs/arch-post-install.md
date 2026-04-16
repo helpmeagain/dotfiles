@@ -1,5 +1,16 @@
 ## Arch Post Install
 
+## Dead keys firefox
+- `sudo pacman -S ibus`
+- `sudo nano /etc/environment`
+
+```bash
+GTK_IM_MODULE=ibus
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=ibus
+```
+- `reboot`
+
 ## Dual boot with Windows
 
 ### Dual Boot Troubleshooting
