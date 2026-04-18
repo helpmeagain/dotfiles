@@ -9,4 +9,4 @@ X-KDE-Priority=TopLevel
 [Desktop Action openInVSCode]
 Name=Abrir com Visual Studio Code
 Exec=code "%f"
-Icon=visual-studio-code
+Icon=vscode
