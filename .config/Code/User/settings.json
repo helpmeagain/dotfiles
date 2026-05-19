@@ -70,7 +70,6 @@
     "*.copilotmd": "vscode.markdown.preview.editor"
   },
   "window.customTitleBarVisibility": "auto",
-  "window.commandCenter": false,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
@@ -101,5 +100,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "debug.console.fontFamily": "JetBrainsMono Nerd Font",
-  "workbench.colorTheme": "Dark Modern"
+  "workbench.colorTheme": "Dark Modern",
+  "chat.disableAIFeatures": true
 }
