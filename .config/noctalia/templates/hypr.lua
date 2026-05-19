@@ -1,0 +1,6 @@
+Primary = "{{colors.primary.default.rgba}}"
+Secondary = "{{colors.secondary.default.rgba}}"
+Tertiary = "{{colors.tertiary.default.rgba}}"
+Surface = "{{colors.surface.default.rgba}}"
+Surface_lowest = "{{colors.surface_container_lowest.default.rgba}}"
+Error = "{{colors.error.default.rgba}}"

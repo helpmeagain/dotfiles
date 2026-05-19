@@ -6,3 +6,7 @@
 input_path = "~/.config/noctalia/templates/starship.toml"
 output_path = "~/.config/starship.toml"
 
+[templates.hyprland]
+input_path = "~/.config/noctalia/templates/hypr.lua"
+output_path = "~/.config/hypr/hyprland/colors.lua"
+

@@ -92,13 +92,13 @@
             ],
             "left": [
                 {
-                    "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
                     "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "noctalia",
-                    "id": "ControlCenter",
+                    "icon": "rocket",
+                    "iconColor": "none",
+                    "id": "Launcher",
                     "useDistroLogo": true
                 },
                 {
@@ -378,7 +378,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 1,
+        "radiusRatio": 0.45,
         "reverseScroll": false,
         "scaleRatio": 1,
         "screenRadiusRatio": 1,
@@ -594,10 +594,6 @@
     },
     "templates": {
         "activeTemplates": [
-            {
-                "enabled": true,
-                "id": "hyprland"
-            },
             {
                 "enabled": true,
                 "id": "niri"
