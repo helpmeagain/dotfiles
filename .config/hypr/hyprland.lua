@@ -2,7 +2,6 @@ require("hyprland.general")
 require("hyprland.visual")
 require("hyprland.input")
 require("hyprland.keybindings")
-
 -----------------------
 ----- PERMISSIONS -----
 -----------------------

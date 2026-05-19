@@ -147,6 +147,19 @@ sudo systemctl enable --now docker && sudo groupadd -f docker && sudo usermod -a
 
 ### ZSH
 
+Editar o arquivo `sudo nano /etc/zsh/zshenv` e adicionar:
+```bash
+if [[ -z "$XDG_CONFIG_HOME" ]]
+then
+    export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+if [[ -d "$XDG_CONFIG_HOME/zsh" ]]
+then
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+fi
+```
+
 ```bash
 sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting
 chsh -s /bin/zsh

@@ -4,8 +4,9 @@ add_newline = false
 
 format = """
 [](#ffb4a8)\
-$os\
 $username\
+$os\
+$hostname\
 [](fg:#ffb4a8 bg:#920401)\
 $directory\
 [](fg:#920401 bg:#7c2c22)\
@@ -25,7 +26,13 @@ $time\
 show_always = true
 style_user = "bg:#ffb4a8 fg:#690100"
 style_root = "bg:#ffb4a8 fg:#690100"
-format = '[$user ](bold $style)'
+format = '[ $user ](bold $style)'
+disabled = false
+
+[hostname]
+ssh_only = false
+style = "bg:#ffb4a8 fg:#690100"
+format = '[$hostname ](bold $style)'
 disabled = false
 
 [os]
