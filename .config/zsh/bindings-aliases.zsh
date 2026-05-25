@@ -9,18 +9,20 @@ bindkey "^[[1;5D" backward-word
 bindkey '^\' autosuggest-toggle
 
 # === alias ===
-alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias clear="precmd() { precmd() { echo } } && clear"
 alias cat="bat"
 alias vim="nvim"
 alias vi="nvim"
+alias ls="eza"
+alias tree="eza -T"
 
 alias ubuntu="distrobox enter ubuntu"
 alias kali="distrobox enter kali"
 
-if command -v bat >/dev/null 2>&1; then
-    alias cat='bat'
-elif command -v batcat >/dev/null 2>&1; then
+if command -v batcat >/dev/null 2>&1; then
+    alias bat='batcat'
     alias cat='batcat'
+elif command -v bat >/dev/null 2>&1; then
+    alias cat='bat'
 fi

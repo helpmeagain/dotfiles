@@ -38,5 +38,11 @@ sudo pacman -S stow
 4. Create the symbolic links:
 
 ```bash
-`stow -t ~ .`
+stow -t ~ --no-folding .
+```
+
+To delete the symbolic links:
+
+```bash
+stow -D -t ~ .
 ```
