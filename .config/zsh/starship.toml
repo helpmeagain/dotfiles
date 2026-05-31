@@ -6,7 +6,7 @@ format = """
 $username\
 $os\
 $hostname\
-[](fg:#89b4fa bg:#585b70)\
+[](fg:#c099ff bg:#585b70)\
 $directory\
 [](fg:#585b70 bg:#45475a)\
 $git_branch\
@@ -23,20 +23,20 @@ $time\
 
 [username]
 show_always = true
-style_user = "bg:#89b4fa fg:#1e1e2e"
+style_user = "bg:#c099ff fg:#1e1e2e"
 style_root = "bg:#f38ba8 fg:#1e1e2e"
 format = '[ $user ](bold $style)'
 disabled = false
 
 [hostname]
 ssh_only = false
-style = "bg:#89b4fa fg:#1e1e2e"
+style = "bg:#c099ff fg:#1e1e2e"
 format = '[$hostname ](bold $style)'
 disabled = false
 
 [os]
 disabled = false
-style = "bg:#89b4fa fg:#1e1e2e"
+style = "bg:#c099ff fg:#1e1e2e"
 format = '[$symbol ]($style)'
 
 [os.symbols]
