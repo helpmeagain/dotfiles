@@ -1,0 +1,20 @@
+{
+  "plugins": {
+    "catppuccin": {
+      "rev": "0303a7208dba448c459767486a38a6ec05c4216b",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "fzf-lua": {
+      "rev": "d340ade20dfe4ef87e6f9a63b9905be91965b5dc",
+      "src": "https://www.github.com/ibhagwan/fzf-lua"
+    },
+    "mini.nvim": {
+      "rev": "232ceeb14f7f7e849056309b85cb2fed712db46f",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "nvim-tree.lua": {
+      "rev": "07f541fcaa4a5ae019598240362449ab7e9812b3",
+      "src": "https://www.github.com/nvim-tree/nvim-tree.lua"
+    }
+  }
+}
