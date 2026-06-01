@@ -1,4 +1,5 @@
 {
+  "telemetry.telemetryLevel": "off",
   "symbols.hidesExplorerArrows": false,
   "workbench.layoutControl.enabled": false,
   "catppuccin.italicComments": false,
@@ -101,5 +102,6 @@
   },
   "debug.console.fontFamily": "JetBrainsMono Nerd Font",
   "workbench.colorTheme": "Dark Modern",
-  "chat.disableAIFeatures": true
+  "chat.disableAIFeatures": true,
+  "chat.agent.enabled": false
 }
