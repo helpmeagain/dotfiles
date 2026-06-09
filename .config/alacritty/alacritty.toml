@@ -10,7 +10,7 @@ title = "Terminal"
 history = 50000
 
 [font]
-size = 14
+size = 12
 
 [selection]
 save_to_clipboard = true

@@ -15,7 +15,7 @@ sudo pacman -Syu
 ### Essentials
 
 ```bash
-sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship bat mise firewalld ntfs-3g fzf neovim tmux
+sudo pacman -S --needed base-devel nano git curl wget docker docker-compose stow zsh starship bat mise firewalld ntfs-3g fzf neovim tmux rsync
 ```
 
 #### AUR Helper

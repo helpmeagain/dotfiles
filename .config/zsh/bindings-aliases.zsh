@@ -20,6 +20,28 @@ alias tree="eza -T"
 alias ubuntu="distrobox enter ubuntu"
 alias kali="distrobox enter kali"
 
+# === function ===
+cpr() {
+    rsync \
+        --archive \
+        --human-readable \
+        --partial \
+        --info=stats1,progress2 \
+        --modify-window=1 \
+        "$@"
+}
+
+mvr() {
+    rsync \
+        --archive \
+        --human-readable \
+        --partial \
+        --info=stats1,progress2 \
+        --modify-window=1 \
+        --remove-source-files \
+        "$@"
+}
+
 if command -v batcat >/dev/null 2>&1; then
     alias bat='batcat'
     alias cat='batcat'

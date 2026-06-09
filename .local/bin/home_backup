@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+set -Eeuo pipefail
+
+DATA=$(date '+%Y-%m-%d_%H-%M-%S')
+
+LOGDIR="$HOME/.config/home_backup"
+mkdir -p "$LOGDIR"
+
+ORIGENS=(
+    "Documentos/Arquivos sensíveis"
+    "Documentos/Documentos digitalizados"
+    "Imagens/Profile"
+    "Imagens/Wallpapers"
+    "Imagens/Stickers"
+)
+
+DESTINOS=(
+    "/mnt/HDD1/HomeBackup"
+    "/mnt/HDD2/HomeBackup"
+    "/mnt/HDD3/HomeBackup"
+    "/mnt/SSD1/HomeBackup"
+)
+
+if (( $# > 0 )); then
+    DESTINOS+=("$@")
+fi
+
+echo
+echo "========================================="
+echo "Backup iniciado em $(date)"
+echo "========================================="
+echo
+
+cd "$HOME"
+
+for origem in "${ORIGENS[@]}"; do
+    if [[ ! -e "$origem" ]]; then
+        echo "[ERRO] Origem não encontrada: $HOME/$origem"
+        exit 1
+    fi
+done
+
+SUCESSOS=0
+FALHAS=0
+
+for destino in "${DESTINOS[@]}"; do
+    echo
+    echo "-----------------------------------------"
+    echo "Destino: $destino"
+    echo "-----------------------------------------"
+
+    mkdir -p "$destino"
+
+    NOME_DESTINO=$(basename "$(dirname "$destino")")
+    LOG="$LOGDIR/${NOME_DESTINO}-${DATA}.log"
+
+    {
+        echo
+        echo "========================================="
+        echo "Backup para: $destino"
+        echo "Início: $(date)"
+        echo "========================================="
+    } >> "$LOG"
+
+    if rsync \
+        -aR \
+        -c \
+        --delete \
+        --partial \
+        --human-readable \
+        --stats \
+        --itemize-changes \
+        --info=progress2 \
+        "${ORIGENS[@]}" \
+        "$destino" \
+        2>&1 | tee -a "$LOG"
+    then
+        echo "[OK] Backup concluído: $destino"
+        echo "[OK] Backup concluído: $destino" >> "$LOG"
+        ((SUCESSOS+=1))
+    else
+        echo "[ERRO] Falha no backup: $destino"
+        echo "[ERRO] Falha no backup: $destino" >> "$LOG"
+        ((FALHAS+=1))
+    fi
+done
+
+echo
+echo "========================================="
+echo "Resumo"
+echo "========================================="
+echo "Sucessos: $SUCESSOS"
+echo "Falhas:   $FALHAS"
+echo "Fim:      $(date)"
+echo "========================================="
+
+echo
+echo "Logs salvos em:"
+echo "  $LOGDIR"
