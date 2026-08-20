@@ -7,6 +7,8 @@ DATA=$(date '+%Y-%m-%d_%H-%M-%S')
 LOGDIR="$HOME/.config/home_backup"
 mkdir -p "$LOGDIR"
 
+SALVAR_LOG=true
+
 ORIGENS=(
     "Documentos/Arquivos sensíveis"
     "Documentos/Documentos digitalizados"
@@ -15,18 +17,49 @@ ORIGENS=(
     "Imagens/Stickers"
 )
 
-DESTINOS=(
+DESTINOS_PADRAO=(
     "/mnt/HDD1/HomeBackup"
     "/mnt/HDD2/HomeBackup"
     "/mnt/HDD3/HomeBackup"
     "/mnt/SSD1/HomeBackup"
 )
 
-if (( $# > 0 )); then
-    DESTINOS+=("$@")
+DESTINOS=()
+
+while (( $# > 0 )); do
+    case "$1" in
+        --no-log)
+            SALVAR_LOG=false
+            ;;
+        *)
+            DESTINOS+=("$1")
+            ;;
+    esac
+    shift
+done
+
+if (( ${#DESTINOS[@]} == 0 )); then
+    DESTINOS=("${DESTINOS_PADRAO[@]}")
 fi
 
 echo
+echo "========================================="
+echo "Verificando integridade dos arquivos sensíveis"
+echo "========================================="
+echo
+
+SENSITIVE_DIR="$HOME/Documentos/Arquivos sensíveis"
+
+(
+    cd "$SENSITIVE_DIR"
+    gpg --verify manifest.sha256.sig manifest.sha256
+    sha256sum -c manifest.sha256
+)
+
+echo
+echo "[OK] Verificação PGP + integridade concluída"
+echo
+
 echo "========================================="
 echo "Backup iniciado em $(date)"
 echo "========================================="
@@ -55,13 +88,23 @@ for destino in "${DESTINOS[@]}"; do
     NOME_DESTINO=$(basename "$(dirname "$destino")")
     LOG="$LOGDIR/${NOME_DESTINO}-${DATA}.log"
 
-    {
-        echo
-        echo "========================================="
-        echo "Backup para: $destino"
-        echo "Início: $(date)"
-        echo "========================================="
-    } >> "$LOG"
+    if $SALVAR_LOG; then
+
+        {
+            echo
+            echo "========================================="
+            echo "Backup para: $destino"
+            echo "Início: $(date)"
+            echo "========================================="
+        } >> "$LOG"
+
+        RSYNC_OUTPUT=(tee -a "$LOG")
+
+    else
+
+        RSYNC_OUTPUT=(cat)
+
+    fi
 
     if rsync \
         -aR \
@@ -74,14 +117,22 @@ for destino in "${DESTINOS[@]}"; do
         --info=progress2 \
         "${ORIGENS[@]}" \
         "$destino" \
-        2>&1 | tee -a "$LOG"
+        2>&1 | "${RSYNC_OUTPUT[@]}"
     then
         echo "[OK] Backup concluído: $destino"
-        echo "[OK] Backup concluído: $destino" >> "$LOG"
+
+        if $SALVAR_LOG; then
+            echo "[OK] Backup concluído: $destino" >> "$LOG"
+        fi
+
         ((SUCESSOS+=1))
     else
         echo "[ERRO] Falha no backup: $destino"
-        echo "[ERRO] Falha no backup: $destino" >> "$LOG"
+
+        if $SALVAR_LOG; then
+            echo "[ERRO] Falha no backup: $destino" >> "$LOG"
+        fi
+
         ((FALHAS+=1))
     fi
 done
@@ -95,6 +146,8 @@ echo "Falhas:   $FALHAS"
 echo "Fim:      $(date)"
 echo "========================================="
 
-echo
-echo "Logs salvos em:"
-echo "  $LOGDIR"
+if $SALVAR_LOG; then
+    echo
+    echo "Logs salvos em:"
+    echo "  $LOGDIR"
+fi
